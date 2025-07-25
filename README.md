@@ -128,7 +128,7 @@ Start where you left off with complete context.
 
 ## Version Comparison
 
-| Feature | MSP Lite | MSP Standard | MSP Advanced |
+| Feature | MSP Lite | MSP Standard | MSP Advanced (COMING SOON) |
 |---------|----------|--------------|--------------|
 | Session Tracking | ✅ JSON files | ✅ Neo4j | ✅ Neo4j + Custom |
 | Progress Tracking | ✅ Basic | ✅ Full | ✅ Team metrics |
