@@ -1,0 +1,161 @@
+{
+  "neo4j": {
+    "connection": {
+      "uri": "bolt://localhost:7687",
+      "username": "neo4j",
+      "password": "password",
+      "database": "neo4j"
+    },
+    "retry": {
+      "maxAttempts": 3,
+      "delayMs": 1000,
+      "backoffMultiplier": 2
+    },
+    "pool": {
+      "maxSize": 50,
+      "acquisitionTimeout": 60000,
+      "connectionTimeout": 30000,
+      "maxLifetime": 3600000
+    },
+    "logging": {
+      "enabled": true,
+      "level": "info",
+      "prettyPrint": true
+    }
+  },
+  "schemas": {
+    "session": {
+      "required": ["id", "user", "startTime", "status", "progress"],
+      "properties": {
+        "id": "string",
+        "user": "string",
+        "startTime": "datetime",
+        "endTime": "datetime",
+        "status": "enum:active,completed,failed",
+        "progress": "integer:0-100",
+        "summary": "string",
+        "lastUpdate": "datetime"
+      }
+    },
+    "entity": {
+      "required": ["name", "type", "createdAt"],
+      "properties": {
+        "name": "string",
+        "type": "string",
+        "createdAt": "datetime",
+        "description": "string",
+        "metadata": "json"
+      }
+    },
+    "decision": {
+      "required": ["content", "timestamp"],
+      "properties": {
+        "content": "string",
+        "rationale": "string",
+        "timestamp": "datetime",
+        "impact": "enum:low,medium,high",
+        "category": "string"
+      }
+    },
+    "progress": {
+      "required": ["timestamp", "percentage"],
+      "properties": {
+        "timestamp": "datetime",
+        "percentage": "integer:0-100",
+        "message": "string",
+        "delta": "integer"
+      }
+    }
+  },
+  "relationships": {
+    "session": {
+      "HAS_PROGRESS": {
+        "target": "Progress",
+        "properties": {}
+      },
+      "CREATED_ENTITY": {
+        "target": "Entity",
+        "properties": {
+          "createdAt": "datetime"
+        }
+      },
+      "MADE_DECISION": {
+        "target": "Decision",
+        "properties": {
+          "context": "string"
+        }
+      },
+      "LINKS_TO": {
+        "target": "Session",
+        "properties": {
+          "linkType": "enum:continues,references,depends_on"
+        }
+      }
+    },
+    "entity": {
+      "HAS_OBSERVATION": {
+        "target": "Observation",
+        "properties": {
+          "timestamp": "datetime"
+        }
+      },
+      "RELATES_TO": {
+        "target": "Entity",
+        "properties": {
+          "relationType": "string"
+        }
+      }
+    },
+    "decision": {
+      "CONSIDERED": {
+        "target": "Alternative",
+        "properties": {
+          "weight": "float"
+        }
+      }
+    }
+  },
+  "indexes": [
+    {
+      "name": "session_id_index",
+      "label": "Session",
+      "property": "id",
+      "type": "unique"
+    },
+    {
+      "name": "session_user_status_index",
+      "label": "Session",
+      "properties": ["user", "status"],
+      "type": "composite"
+    },
+    {
+      "name": "entity_name_type_index",
+      "label": "Entity",
+      "properties": ["name", "type"],
+      "type": "composite"
+    },
+    {
+      "name": "progress_timestamp_index",
+      "label": "Progress",
+      "property": "timestamp",
+      "type": "range"
+    }
+  ],
+  "constraints": [
+    {
+      "type": "unique",
+      "label": "Session",
+      "property": "id"
+    },
+    {
+      "type": "exists",
+      "label": "Session",
+      "property": "user"
+    },
+    {
+      "type": "exists",
+      "label": "Entity",
+      "property": "name"
+    }
+  ]
+}

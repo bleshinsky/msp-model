@@ -1,0 +1,100 @@
+# MSP .gitignore
+
+# State files
+.msp/
+state/
+*.state.json
+current-session.json
+
+# Configuration files with sensitive data
+config/*-config.json
+!config/*-config.example.json
+config/*.local.json
+
+# Archive files
+archive/
+*.archive/
+
+# Logs
+*.log
+logs/
+debug/
+
+# Neo4j
+neo4j-data/
+*.cypher.log
+
+# Obsidian
+.obsidian/
+*.sync-conflict-*
+
+# Linear
+.linear-cache/
+
+# PowerShell
+*.ps1.credentials
+*-credentials.xml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+temp/
+tmp/
+
+# Test outputs
+test-results/
+coverage/
+*.test.json
+
+# Build outputs
+dist/
+build/
+out/
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+*.pdf
+
+# Node.js (for any web components)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Backup files
+*.bak
+*.backup
+backup/
+
+# User-specific files
+personal/
+private/
+local-only/
+
+# Session archives (optional - uncomment to include in repo)
+# !archive/examples/
+
+# Docker
+docker/neo4j/data/
+docker/neo4j/logs/

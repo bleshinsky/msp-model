@@ -1,0 +1,40 @@
+{
+  "project": "my-project",
+  "user": {
+    "name": "Developer",
+    "email": "developer@example.com"
+  },
+  "neo4j": {
+    "uri": "bolt://localhost:7687",
+    "username": "neo4j",
+    "database": "neo4j",
+    "projectStateName": "MSP Current State"
+  },
+  "obsidian": {
+    "vaultPath": "C:\\Obsidian\\MyVault",
+    "templatesPath": "Templates",
+    "dailyNotesPath": "Daily Notes",
+    "projectsPath": "Projects"
+  },
+  "linear": {
+    "teamId": "your-team-uuid-here",
+    "projectId": "your-project-uuid-here",
+    "activeIssue": null,
+    "updateFrequency": 5,
+    "significantKeywords": ["completed", "finished", "implemented", "fixed", "resolved"]
+  },
+  "features": {
+    "autoClipboard": true,
+    "progressTracking": true,
+    "decisionTracking": true,
+    "blockerTracking": true,
+    "entityTracking": true,
+    "minProgressChange": 1,
+    "sessionTimeout": 24,
+    "debugMode": false
+  },
+  "paths": {
+    "stateDir": "%TEMP%\\msp",
+    "archiveDir": ".\\archive"
+  }
+}
