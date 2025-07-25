@@ -9,18 +9,31 @@
 
 ## What is MSP?
 
-MSP (Mandatory Session Protocol) is a context engineering tool that ensures you never lose track of your development work. It enforces structured session management across your entire toolchain, creating a persistent knowledge graph of your project's evolution.
+MSP (Mandatory Session Protocol) is a model for context engineering that ensures you never lose track of your development work. It enforces structured session management across your entire toolchain, creating a persistent knowledge graph of your project's evolution.
 
-### The Problem
+### The Problem: Vibe Coding
 
-- 🤯 **Context Loss**: "What was I working on yesterday?"
-- 🔄 **Repeated Work**: "I know I solved this before..."
+**Vibe Coding** (noun): The practice of using AI assistants through unstructured, conversational interactions without persistent context, resulting in:
+
+- 🤯 **Context Amnesia**: Every conversation starts from zero
+- 🔄 **Repeated Work**: " Context hallucination results in code debt
 - 🤖 **Shallow AI Help**: "Let me explain my entire project again..."
-- 📉 **Invisible Progress**: "Am I actually moving forward?"
+- 📉 **Inconsistent responses**: Different answers to similar questions
+-   **Lost decisions**: You've switched integration but your AI assistant only remembers the old one
 
-### The Solution
+### The Vibe Coding Loop of Doom
 
-MSP implements the **R³ Protocol** (Route-Recall-Record) to create a memory-augmented development workflow:
+```
+Start new chat → Explain context → Get answer → Close chat → Forget everything → Repeat
+```
+
+### The Solution: Context Engineering
+
+**Context Engineering** (noun): The systematic practice of capturing, structuring, and maintaining development context to enable deep, consistent, and evolving AI assistance.
+
+### How MSP Helps
+
+MSP implements the looping **R³ Framework* (Route-Recall-Record) to create a memory-augmented development workflow:
 
 ```
     ROUTE → RECALL → RECORD
@@ -36,7 +49,7 @@ Zero dependencies. Just PowerShell.
 
 ```powershell
 # Download and start
-iwr -Uri "https://github.com/msp-framework/msp/raw/main/lite/msp-lite.ps1" -OutFile "msp.ps1"
+iwr -Uri "https://github.com/msp-model/msp/raw/main/lite/msp-lite.ps1" -OutFile "msp.ps1"
 .\msp.ps1 start
 ```
 
@@ -44,18 +57,19 @@ iwr -Uri "https://github.com/msp-framework/msp/raw/main/lite/msp-lite.ps1" -OutF
 
 Full context engineering with Neo4j, Obsidian, and Linear.
 
+NOTE: You can switch any of these out for your tool of choice. The important thing is to have all three functions covered. Go to http://sessionprotocol.dev to find out more.
+
 ```powershell
 # Clone and setup
-git clone https://github.com/msp-framework/msp.git
+git clone https://github.com/msp-model/msp-model.git
 cd msp/standard
 .\setup.ps1
 ```
 
-### Option 3: MSP Advanced
+### Option 3: MSP Advanced (COMING SOON)
 
 Enterprise features, team collaboration, custom integrations.
 
-See [Advanced Setup Guide](./advanced/README.md) for details.
 
 ## Core Features
 
@@ -72,7 +86,7 @@ Quantify your work with granular progress updates. Know exactly where you are an
 Never wonder "why did we do it this way?" again. Every architectural choice is documented with rationale.
 
 ### 🔄 **Session Recovery**
-Start where you left off with complete context. Monday mornings become productive instantly.
+Start where you left off with complete context.
 
 ### 📝 **Tool Integration**
 - **Neo4j**: Knowledge graph and relationships
@@ -109,6 +123,7 @@ Start where you left off with complete context. Monday mornings become productiv
 # → All decisions with rationale
 # → Generated Neo4j queries
 # → Updated documentation
+# → Automated validation across the three tools - knowledge graph, task/project management and documentation - ensures everything is in sync and errors are not creeping in.
 ```
 
 ## Version Comparison
@@ -146,8 +161,8 @@ Start where you left off with complete context. Monday mornings become productiv
 Check the `examples/` directory for real-world usage:
 
 - `solo-developer/` - Individual productivity workflows
-- `small-team/` - Team collaboration patterns
-- `enterprise/` - Large-scale implementations
+- `small-team/` - Team collaboration patterns  (COMING SOON)
+- `enterprise/` - Large-scale implementations (COMING SOON)
 
 ## Contributing
 
@@ -157,14 +172,9 @@ We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guideline
 
 ```powershell
 # Clone the repo
-git clone https://github.com/[TBC]/msp.git
-cd msp
+git clone https://github.com/msp-model/msp-model.git
+cd msp-model
 
-# Run tests
-.\run-tests.ps1
-
-# Build documentation
-.\build-docs.ps1
 ```
 
 
