@@ -98,7 +98,3 @@ local-only/
 # Docker
 docker/neo4j/data/
 docker/neo4j/logs/
-/GIT-SETUP-COMMANDS.md
-/setup-git-repo.ps1
-/setup-git.bat
-/setup-repository.ps1
