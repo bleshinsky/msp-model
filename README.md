@@ -4,7 +4,6 @@
 > Never lose context again. A developer productivity tool for the context engineering era.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PowerShell](https://img.shields.io/badge/PowerShell-7%2B-blue)](https://github.com/PowerShell/PowerShell)
 [![Neo4j Compatible](https://img.shields.io/badge/Neo4j-4.4%2B-green)](https://neo4j.com)
 
 ## What is MSP?
